@@ -40,3 +40,28 @@ Explanation:
 =================================================
 
 """
+
+
+def contains_all_vowels(word: str) -> bool:
+    """Return True if word contains all 5 vowels."""
+    vowels = set("aeiou")
+    return vowels.issubset(set(word))
+
+
+def words_with_all_vowels(filename="sowpods.txt"):
+    results = []
+
+    with open(filename, "r") as f:
+        for word in f:
+            word = word.strip().lower()
+            if contains_all_vowels(word):
+                results.append(word)
+
+    for w in results:
+        print(w)
+    print("Total words with all vowels:", len(results))
+
+
+
+words_with_all_vowels("sowpods.txt")
+   

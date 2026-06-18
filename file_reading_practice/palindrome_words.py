@@ -51,3 +51,30 @@ Explanation:
 =================================================
 
 """
+def is_palindrome(word: str) -> bool:
+    """Return True if word is a palindrome."""
+    return word == word[::-1]
+
+
+def find_palindromes(filename="sowpods.txt"):
+    palindromes = []
+
+    with open(filename, "r") as f:
+        for word in f:
+            word = word.strip().lower()
+            if is_palindrome(word):
+                palindromes.append(word)
+
+    # Print results
+    for p in palindromes:
+        print(p)
+    print("Total palindromes:", len(palindromes))
+
+
+find_palindromes("sowpods.txt")
+palindromes = find_palindromes("sowpods.txt")
+if __name__ == "__main__":
+        find_palindromes("sowpods.txt")
+
+
+
